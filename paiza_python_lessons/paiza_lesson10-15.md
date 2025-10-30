@@ -33,4 +33,14 @@ paiza ラーニング　：　新・Python入門編 Lesson 10 ～ 15
 ---
 
 
+【EOF】
+
+
+
+
+
+
+
+[←　README](../README.md)
+
 
