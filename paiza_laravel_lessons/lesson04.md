@@ -1125,16 +1125,10 @@ resources/views/show.blade.php
 @endsection
 ```
 
-
-
 ---
 
 
 【EOF】
-
-
-
-
 
 
 

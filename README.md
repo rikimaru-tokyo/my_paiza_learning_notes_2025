@@ -4,8 +4,9 @@
 - Python 
   - [paiza ラーニング　：　新・Python入門編 Lesson 1 ～ 5](./paiza_python_lessons/paiza_lesson01-05.md)
   - [paiza ラーニング　：　新・Python入門編 Lesson 6 ～ 10](./paiza_python_lessons/paiza_lesson06-09.md)
-  - [paiza ラーニング　：　新・Python入門編 Lesson 10 ～ 15](./paiza_python_lessons/paiza_lesson10-15.md)
-
+  - [paiza ラーニング　：　新・Python入門編 Lesson 10 ～ 13](./paiza_python_lessons/paiza_lesson10-13.md)
+  - [paiza ラーニング　：　新・Python入門編 Lesson 14 ～ 17](./paiza_python_lessons/paiza_lesson14-17.md)
+  - [paiza ラーニング　：　新・Python入門編 Lesson 18 ～ ](./paiza_python_lessons/paiza_lesson18-.md)
 ---
 
 - PHP - Laravel
