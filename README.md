@@ -6,7 +6,8 @@
   - [paiza ラーニング　：　新・Python入門編 Lesson 6 ～ 10](./paiza_python_lessons/paiza_lesson06-09.md)
   - [paiza ラーニング　：　新・Python入門編 Lesson 10 ～ 13](./paiza_python_lessons/paiza_lesson10-13.md)
   - [paiza ラーニング　：　新・Python入門編 Lesson 14 ～ 17](./paiza_python_lessons/paiza_lesson14-17.md)
-  - [paiza ラーニング　：　新・Python入門編 Lesson 18 ～ ](./paiza_python_lessons/paiza_lesson18-.md)
+  - [paiza ラーニング　：　新・Python入門編 Lesson 18 ～ 20](./paiza_python_lessons/paiza_lesson18-20.md)
+  - [paiza ラーニング　：　新・Python入門編 Lesson 21 ～ ](./paiza_python_lessons/paiza_lesson21-.md)
 ---
 
 - PHP - Laravel

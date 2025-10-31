@@ -1,0 +1,904 @@
+<!-- omit in toc -->
+# paiza ラーニング　：　新・Python入門編 Lesson 18 ～ 20
+
+<!-- omit in toc -->
+# 目次
+
+
+
+---
+
+
+# Lesson 18: 関数を学習しよう
+
+
+## 01:関数とはなにか
+
+- 関数とは、一定の処理をするもの
+
+- 関数を利用するメリット
+  - 書くコードの量が減る
+  - リストをソートするコードを 10 回書くより、リストをソートするコードを関数にまとめて、関数を 10 回使う方がコードが簡潔になる
+- 修正が簡単になる
+  - リストをソートするコードを 10 回書いた場合、10 箇所で修正が必要になる
+  - 一方で、リストをソートするコードを関数にまとめて、関数を 10 回使った場合は、1 箇所の修正で済む
+
+
+## 02:関数の書き方
+
+### 関数の書き方
+
+```Python
+def 関数名(仮引数1, ..., 仮引数n):
+    処理
+    return 返り値
+```
+
+### 関数に関する用語
+
+  - 仮引数: 関数に渡される値が代入される変数
+  - 引数: 関数に渡される値
+  - 関数を呼び出す: 関数を使う
+  - 返り値: 関数内の処理が終わったときに、「関数の呼び出し元」に返される値
+
+### インデントに関する注意点
+
+  - 処理を記述する行はインデントを 1 つ多くする
+  - インデントは半角スペース 4 つが推奨されている
+  - 処理のまとまりごとにインデントを揃える
+
+
+## 03:関数を定義
+
+### 関数の書き順
+
+  1. def と書く:
+
+```python
+def
+```
+
+  2. 半角スペースを空けて、関数名を書く:
+```python
+def twice
+```
+
+  3. 括弧を書いて、括弧のなかで仮引数を用意する:
+```python
+def twice(x)
+```
+
+  4. コロンを書いて、改行する:
+```python
+def twice(x):
+```
+
+  5. インデントに気をつけて、処理を書く:
+```python
+def twice(x):
+    y = x * 2
+```
+
+  6. インデントに気をつけて、return と書く:
+```python
+def twice(x):
+    y = x * 2
+    return
+```
+
+
+  7. 半角スペースを空けて、返り値を書く
+```python
+def twice(x):
+    y = x * 2
+    return y
+```
+
+
+## 04:関数のなかからの関数呼び出し
+
+### 関数のなかから関数を呼び出す
+
+関数のなかから関数を呼び出すことができる
+```python
+def twice(x):
+    return x * 2
+
+def increment(x):
+    return x + 1
+
+def twice_and_increment(x):
+    return increment(twice(x))
+
+print(twice_and_increment(3))
+```
+
+
+`twice_and_increment 関数`のなかで、`twice 関数`と `increment 関数`を呼び出す
+
+
+## 05:関数を呼び出す場所
+
+
+### 関数を呼び出す場所
+
+関数を呼び出す場所によってはエラーになることがある
+
+- エラーが発生するコード1:
+
+```python
+print(twice_and_increment(3))
+
+def twice(x):
+    return x * 2
+
+def increment(x):
+    return x + 1
+
+def twice_and_increment(x):
+    return increment(twice(x))
+```
+
+> [!CAUTION] 
+> `twice_and_increment 関数`を定義する前に、`twice_and_increment 関数`を呼び出そうとしているため、エラーが発生する
+
+
+- エラーが発生しないコード1
+
+```python
+def twice_and_increment(x):
+    return increment(twice(x))
+
+def twice(x):
+    return x * 2
+
+
+def increment(x):
+    return x + 1
+
+print(twice_and_increment(3))
+```
+
+> [!WARNING]
+> twice_and_increment 関数を定義した行では、twice_and_increment 関数が呼び出す 2 つの関数、twice 関数、increment 関数は定義済みではないが、twice_and_increment 関数を呼び出す行では、twice 関数、increment 関数は定義済みであるため、エラーは発生しない
+
+
+
+- エラーが発生するコード2
+```python
+def twice_and_increment(x):
+    return increment(twice(x))
+
+def twice(x):
+    return x * 2
+
+print(twice_and_increment(3))
+
+def increment(x):
+    return x + 1
+```
+
+> [!CAUTION]
+> twice_and_increment 関数を呼び出す行で、increment 関数が定義済みでないため、エラーが発生する
+
+
+
+## 06:内部関数を定義
+
+### 内部関数とはなにか
+
+内部関数とは、関数の内部に定義する関数
+
+内部関数を使ったコード:
+
+```python
+def eight_times(x):
+    def twice(y):
+        return y * 2
+
+    return twice(x) * 4
+
+# eight_times 関数のなかで定義されている twice 関数が内部関数
+print(eight_times(3))
+```
+
+
+### 内部関数を呼び出すことができる範囲
+
+内部関数を呼び出すことができるのは、その内部関数が定義されている関数のなかからのみ
+
+つまり次のコードで、twice 関数を eight_times 関数の外から使うことはできない
+```python
+def eight_times(x):
+    def twice(y):
+        return y * 2
+
+    return twice(x) * 4
+
+print(eight_times(3))
+```
+
+
+
+### !!! 内部関数の使いどころ
+
+- 関数内で何度もおこなう処理を内部関数にまとめる
+  - また、関数のなかからしか呼び出すことができない特性を生かして、
+  - 「関数としてまとめたいが、自由に使われては困る処理」
+  - 「関数としてまとめたいが、関数の外から使うことはなく、自由に使えるようにしても無駄になる処理」
+- といった処理を関数としてまとめることができる
+
+
+
+
+## 07:返り値を書かなかったとき
+
+### 返り値を書かなかったとき
+
+- 返り値を書かなかったときは、None が返される
+  - None とは、NoneType 型の値
+  - NoneType 型は「なにもない」ことを表す型
+
+
+- return 文で、返り値を指定しなかったとき
+
+```python
+def say_hello():
+    print("hello")  # hello
+    return
+
+print(say_hello())  # None
+```
+
+- return 文を書かなかったとき
+
+```python
+def say_hello():
+    print("hello")  # hello
+
+print(say_hello())  # None
+```
+
+
+## 08:関数の処理を強制的に終了(return)
+
+### 関数の処理を終了する方法
+
+`return 文`を書くと、その `return 文`が実行された時点で関数の処理が終了する
+
+```python
+def even_or_odd(n):
+    if n % 2 == 0:
+        print("偶数")
+        return
+
+    print("奇数")
+
+even_or_odd(4)
+```
+
+`even_or_odd 関数`では、`変数 n `の示す値が偶数のとき、"偶数" と出力され、関数処理が終了する("奇数" とは出力されない)
+
+### ※　【Python入門】3つのexitを使い分けよう！
+  - https://www.sejuku.net/blog/24331
+
+
+
+---
+
+
+# Lesson 19: 変数のスコープを学習しよう
+
+
+> [!CAUTION]
+> 【TODO】 Pythonの変数スコープは難しいのでPHP感覚で使わないように
+
+
+## 01:変数のスコープとはなにか
+
+  - 変数のスコープとは、変数の有効範囲のようなもの
+  - 変数には、用意される場所によって、使える範囲が限定的なものがある
+
+
+```python
+def say_hello():
+    msg = "hello"
+    print(msg)
+
+
+say_hello()
+print(msg)
+```
+
+> [!CAUTION]
+> - 7 行目で、変数 msg を使うことはできない <br>
+> - 7 行目は、変数 msg のスコープの外であるため
+
+
+## 02:ローカル変数
+
+### ローカル変数とはなにか
+
+- ローカル変数とは、`スコープが局所的`な変数
+- つまり、使うことのできる範囲が限られている変数のこと
+
+
+### 関数のなかで用意された変数はローカル変数
+
+- 関数のなかで用意された変数は、その関数のローカル変数になる
+- つまり、関数のなかで用意された変数は、使うことのできる範囲が限られる
+
+
+### 【 関数の外から、その関数のローカル変数を使うことはできない 】
+
+
+```python
+def say_hello():
+    msg = "hello"
+    print(msg)
+
+print(msg)
+```
+
+> [!TIP]
+> - このコードを実行すると、6 行目でエラーが発生する <br>
+> - 6 行目から使うことのできる変数 msg がないから
+
+
+
+### 【 関数のなかから、その関数のローカル変数を使うことはできる 】
+
+```python
+def say_hello():
+    msg = "hello"
+    print(msg)
+
+say_hello()
+```
+
+> [!TIP]
+> 実行すると、エラーなく実行できる
+
+
+## 03:非ローカル変数
+
+### 非ローカル変数とはなにか
+
+- 内部関数からみたとき、外側の関数のローカル変数のことを「非ローカル変数」という
+- つまり次のコードで、say 関数からみた、say_hello 関数で用意されている変数 msg を非ローカル変数という
+
+```python
+def say_hello():
+    msg = "hello"
+
+    def say():
+        pass
+
+say_hello()
+```
+
+### 内部関数からは、非ローカル変数の示す値を取得することができる
+
+- 内部関数からは、非ローカル変数の示す値を取得することができる
+- つまり、次のコードの 5 行目ではエラーにならない
+
+```python
+def say_hello():
+    msg = "hello"
+
+    def say():
+        print(msg)
+
+say_hello()
+```
+
+### インデントの深さは関係ない
+
+次のコードを実行すると、エラーが発生する
+```python
+def func0():
+    def func1():
+        x = 1
+        return
+
+    def func2():
+        return x
+
+    return func2()
+
+print(func0())
+```
+
+> [!CAUTION]
+> - func2 関数のなかから、func1 関数のローカル変数を使うことはできず、結果として、func2 関数のなかから使うことのできる変数 x はないため、エラーになる。<br>
+> - 変数のスコープを考えるときに大切なことは、インデントの深さではなく、どの関数のなかにあるかといった包含関係
+
+
+## グローバル変数とはなにか
+
+グローバル変数とは、どこからでも変数の示す値を取得できる変数のこと
+
+次のコードで、変数 x はグローバル変数
+```python
+x = 1
+
+def show():
+    print(f"x = {x}")
+
+show()
+```
+
+
+## 05:変数名の重複
+
+### ローカル変数の変数名を重複させたとき
+
+ローカル変数を用意するとき、その変数名は他の関数のローカル変数や、グローバル変数の名前に縛られず自由に決めることができる
+
+つまり、ローカル変数を用意するとき、どこか他の関数のローカル変数と同じ変数名を使ったり、グローバル変数と同じ変数名を使ったりしても、それぞれは別々の変数として処理される
+
+
+```python
+x = 1
+
+def func0():
+    x = 2
+
+    def func1():
+        x = 3
+        print(x)
+
+    func1()
+    print(x)
+
+func0()
+print(x)
+```
+
+> [!TOP]
+> このコードで用意されている名前が x の 3 つの変数は、それぞれ別物として処理される<br>
+>   - 1 行目の変数 x: グローバル変数 <br>
+>   - 5 行目の変数 x: func0 関数のローカル変数 <br>
+>   - 8 行目の変数 x: func1 関数のローカル変数
+
+
+
+## 06:関数のなかで再代入
+
+### 関数内でグローバル変数に再代入しようとしたとき
+
+基本的に関数内でグローバル変数に再代入しようとすると、エラーが発生する
+
+```python
+x = 1
+def func0():
+    x *= 2
+    print(f"x = {x}")
+
+func0()
+```
+
+> [!WARNING]
+> 上のコードを実行したときにエラーが発生する訳は、5 行目のコードが実行されたとき、<br>
+> func0 関数のローカル変数に再代入することが試みられるから<br>
+> 今回、func0 関数のローカル変数に名前が x の変数はないため、エラーが発生する<br>
+> エラーが発生しないようにするためには、次のコードのようにグローバル変数への再代入をしないようにすればよい
+
+
+```python
+x = 1
+def func0():
+    y = x * 2
+    print(f"y = {y}")
+
+func0()
+```
+
+> [!WARNING]
+> このコードのように、ローカル変数 y を新たに用意することで、エラーが発生しないようにする。<br>
+> 関数内でもグローバル変数の示す値を取得することはできるため、このコードを実行してもエラーは発生しない
+
+
+
+### 内部関数内で非ローカル変数に再代入しようとしたとき
+
+基本的に内部関数内で非ローカル変数に再代入しようとすると、エラーが発生する
+
+```python
+x = 1
+def func0():
+    y = x * 2
+
+    def func1():
+        y *= 2
+
+    func1()
+    print(f"y = {y}")
+
+func0()
+```
+
+> [!WARNING]
+> 上のコードを実行したときにエラーが発生する訳は、8 行目のコードが実行されたとき、<br>
+> func1 関数のローカル変数に再代入することが試みられるから<br>
+> 今回、func1 関数のローカル変数に名前が y の変数はないため、エラーが発生する
+> エラーが発生しないようにするためには、次のコードのように非ローカル変数への再代入をしないようにすればよい
+
+```python
+def func0():
+    y = x * 2
+
+    def func1():
+        z = y * 2
+        print(f"z = {z}")
+
+    func1()
+    print(f"y = {y}")
+
+func0()
+```
+
+> [!WARNING]
+> このコードのように、ローカル変数 z を新たに用意することで、エラーが発生しないようにする <br>
+> 内部関数内で非ローカル変数の示す値を取得することはできるため、このコードを実行してもエラーは発生しない
+
+
+
+## 07:グローバル変数として解釈(global)
+
+
+### global 文を用いてグローバル変数を用意
+
+global 文を使うと、関数内で用意した変数でもグローバル変数として扱うことができる
+
+```python
+def assign_global_x():
+    global x
+    x = 2
+
+assign_global_x()
+print(x)
+```
+
+> [!WARNING]
+> 上のコードで、2 行目の global 文を書かない場合は、7 行目でエラーになる<br>
+> また、assign_global_x 関数を呼び出さない場合も、もちろんエラーになる
+
+
+```python
+def assign_global_x():
+    global x
+    x = 2
+
+print(x)
+```
+
+## 08:global 文を用いて関数の外側の変数の値を変更
+
+### global 文を用いてグローバル変数に再代入
+
+global 文でグローバル変数を指定すると、関数内でもグローバル変数に再代入できるようになる
+
+```python
+x = 0
+def change_global_x():
+    global x
+    x = 10
+
+change_global_x()
+print(x)
+```
+
+上のコードで、5 行目の global 文を書かなかった場合、10 行目で出力される値は 0 になる
+
+
+## 09:内部関数内で非ローカル変数について処理 (nonlocal)
+
+
+### nonlocal 文を用いて非ローカル変数に再代入
+
+nonlocal 文を使うと、内部関数内で非ローカル変数に再代入できるようになる
+
+```python
+x = 1
+def func0():
+    y = x * 2
+
+    def func1():
+        nonlocal y
+        y *= 2
+
+    print(f"y = {y}")   # y = 2
+    func1()
+    print(f"y = {y}")   # y = 4
+
+func0()
+```
+
+上のコードで、8 行目の nonlocal 文を書かなかった場合、9 行目のコードでエラーが発生する
+
+
+## 10:ローカル変数の有用性
+
+
+- ローカル変数があるおかげで、スコープが重ならない場所であれば、同じ名前の変数を独立に使うことができる
+- もしローカル変数がなかったら、同じ名前の変数をコード全体で 1 つしか用意できないため、変数名が被らないようにしなければならない
+- すでに使っていた名前を気付かずに違う変数に割り当ててしまうと、それまでの変数の値が上書きされてしまう
+- といったことになり、同じ名前をコード全体で 1 つしか使えないのはかなり不便になる
+
+
+---
+
+
+
+# Lesson 20: 関数の引数と再帰呼び出しを学習しよう
+
+
+## 01:並び順の通りに引数を渡す(位置引数)
+
+
+### 実引数とはなにか
+
+実引数とは、関数を呼び出す際に指定する引数のこと
+
+### 位置引数とはなにか
+
+位置引数とは、実引数の順番が守られて渡される引数
+
+たとえば、次のコードを実行すると、仮引数 first, second, third にはそれぞれ 1, 2, 3 が代入される
+
+```python
+def check_position(first, second, third):
+    print(f"first: {first}")
+    print(f"second: {second}")
+    print(f"third: {third}")
+
+check_position(1, 2, 3)
+```
+
+
+## 02:明示的に引数を渡す(キーワード引数)
+
+### キーワード引数とはなにか
+
+キーワード引数とは、仮引数の名前を指定して渡す引数
+
+関数呼び出しの際に 関数名(仮引数名1=引数1, ..., 仮引数名n=引数n) のように、仮引数名=引数 のかたちで引数を渡す
+
+たとえば、次のコードを実行すると、仮引数 first, second, third にはそれぞれ 3, 1, 2 が代入される
+```python
+def check_keyword(first, second, third):
+    print(f"first: {first}")
+    print(f"second: {second}")
+    print(f"third: {third}")
+
+check_keyword(second=1, third=2, first=3)
+```
+
+
+### 位置引数とキーワード引数の順番
+
+位置引数の前でキーワード引数を使うとエラーになる
+```python
+def check_keyword(first, second, third):
+    print(f"first: {first}")
+    print(f"second: {second}")
+    print(f"third: {third}")
+
+check_keyword(second=3, 1, 2)
+```
+
+位置引数のうしろでキーワード引数を使うとエラーにならない
+```python
+def check_keyword(first, second, third):
+    print(f"first: {first}")
+    print(f"second: {second}")
+    print(f"third: {third}")
+
+check_keyword(1, third=2, second=3)
+```
+
+
+
+## 03:仮引数にデフォルト値を設定
+
+### 仮引数にデフォルト値を設定する
+
+- 仮引数にデフォルト値を設定することができる
+- デフォルト値が設定された仮引数に引数が渡されなかったとき、その仮引数にはデフォルト値が代入される
+- 関数定義の際に、関数名(仮引数1=デフォルト値1, ..., 仮引数n=デフォルト値n) のかたちでデフォルト値を設定する
+- たとえば、次のコードを実行すると、仮引数 first には実引数として渡した 1 が代入され、仮引数 second, third にはそれぞれデフォルト値の 2, 3 が代入される
+
+```python
+def check_default(first, second=2, third=3):
+    print(f"first: {first}")
+    print(f"second: {second}")
+    print(f"third: {third}")
+
+check_default(1)  # first: 1 second: 2 third: 3
+```
+
+
+### デフォルト値が設定された仮引数 + 位置引数
+
+デフォルト値が設定された仮引数にも、位置引数を使って値を渡すことができる
+```python
+def check_default(first, second=2, third=3):
+    print(f"first: {first}")
+    print(f"second: {second}")
+    print(f"third: {third}")
+
+check_default(1, 20)    # first: 1  second: 20  third: 3
+
+```
+
+
+  - 仮引数 first: 位置引数として渡した 1 が代入される
+  - 仮引数 second: 位置引数として渡した 20 が代入される
+  - 仮引数 third: デフォルト値として設定した 3 が代入される
+
+
+
+### デフォルト値が設定された仮引数 + キーワード引数
+
+デフォルト値が設定された仮引数にも、キーワード引数を使って値を渡すことができる
+```python
+def check_default(first, second=2, third=3):
+    print(f"first: {first}")
+    print(f"second: {second}")
+    print(f"third: {third}")
+
+check_default(1, third=10)   # first: 1  second: 2  third: 10
+```
+
+  - 仮引数 first: 位置引数として渡した 1 が代入される
+  - 仮引数 second: デフォルト値として設定した 2 が代入される
+  - 仮引数 third: キーワード引数として渡した 10 が代入される
+
+
+## 04:仮引数の有効範囲
+
+### 仮引数のスコープ
+
+仮引数はその仮引数が用意された関数のなかでのみ使うことができる
+```python
+def func(x):
+    print(x)
+
+func(1)
+print(x)
+```
+
+
+## 05:仮引数への再代入がおよぼす影響
+
+
+### 仮引数への再代入が外の変数に影響をおよぼすことがある
+
+#### 【 影響をおよぼさない場合 】
+
+実引数として、整数型、文字列型、タプル型など、値を変えることができない型の値を渡した場合は、実引数として渡した値に影響がおよぶことはない
+
+```python
+def twice(x):
+    x *= 2
+    return x
+
+a = 3
+print(twice(a))  # output: 6
+print(a)         # output: 3
+```
+
+
+
+#### 【 影響をおよぼす場合 】
+
+実引数として、リスト型、辞書型、集合型など、値を自由に変えることができる型の値を渡した場合は、実引数として渡した値に影響がおよぶことがある
+
+```python
+def three_times(li):
+    for i in range(len(li)):
+        li[i] *= 3
+
+    return li
+
+a = [1, 2, 3]
+print(three_times(a))  # [3, 6, 9]
+print(a)               # [3, 6, 9]
+```
+
+
+> [!CAUTION]
+> 【TODO】破壊的代入、破壊的ソートをもう一度調べてまとめること
+
+
+## 06:再帰呼び出し
+
+> [!CAUTION]
+> 無限呼び出しに注意！！<br>
+> 条件追加・強制終了措置など、必ず脱出できるように設計すること！！
+
+
+### 再帰呼び出しとはなにか
+
+再帰呼び出しとは、関数のなかで、いまの関数とおなじ関数を呼び出すこと
+
+### n から 0 までの整数をカウントダウンする
+
+再帰呼び出しを使うと、次のコードのように書ける
+
+```python
+def count_down(n):
+    print(n)
+    if n == 0:
+        return
+
+    count_down(n-1)
+```
+
+#### 【 考え方1 】
+
+- count_down 関数では、仮引数 n の値を出力して、`count_down` 関数を`実引数 n-1`で呼び出している
+- `n-1`で呼び出した `count_down 関数`でも同様の処理をおこなって、次の count_down 関数を呼び出す
+
+このサイクルが続くことで、`n`から延々とカウントダウンできる
+
+今回は 0 までカウントダウンしたいから、仮引数 n の値が 0 になったとき、return 文でリターンして、次の count_down 関数を呼び出さないようにしている
+
+
+
+#### 【 考え方2 】
+
+- 「count_down 関数 = 実引数として渡した値から 0 までの値を出力する関数」と意識する
+- 仮引数 n の値を出力して、count_down 関数を実引数 n-1 で呼び出せば、「n の値を出力」+「n-1 から 0 までの値を出力」となり、n から 0 までカウントダウンすることができる
+
+
+
+### n から 0 までの整数をすべて足す
+
+再帰呼び出しを使うと、次のコードのように書ける
+```python
+def rec_sum(n):
+    if n == 0:
+        return 0
+
+    return n + rec_sum(n-1)
+```
+
+#### 【 考え方1 】
+
+- `rec_sum 関数`では、仮引数`n`の値と `rec_sum(n-1)`の返り値を足したものを return 文で返そうとする
+- 呼び出された`rec_sum(n-1)`では、`n-1`と`rec_sum(n-2)`の返り値を足したものを return 文で返そうとする
+- このサイクルが続くことで、`n + n-1 + ...` の値を求めることができるが、サイクルが続く限り、`rec_sum(n), rec_sum(n-1), ...` の値が確定しない
+- 今回は`0`までの和を求めたいから、仮引数`n`の値が`0`になったとき、`return`文で 0 を返して、次の`rec_sum 関数`を呼び出さないようにすることで、サイクルを止めて、`rec_sum(1), rec_sum(2), ..., rec_sum(n-1), rec_sum(n)` の値を確定させる
+
+
+
+#### 【 考え方2 】
+
+- 「`rec_sum 関数 `= 実引数として渡した値から 0 までの値を返す関数」と意識する
+- 仮引数`n`の値と`rec_sum(n-1)`の値を足せば、`「n」+「n-1 から 0 までの和」`となり、n から 0 までの和の値を求めることができる
+
+
+### 演習
+
+```python
+def rec_product(n):
+    # 以下にコードを記述 
+    if n == 1:
+        return n
+    return n * rec_product(n-1)
+
+print(rec_product(10))
+```
+
+
+---
+
+
+
+【EOF】
+
+
+
+[←　README](../README.md)
