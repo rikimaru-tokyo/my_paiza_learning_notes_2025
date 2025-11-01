@@ -7,7 +7,8 @@
   - [paiza ラーニング　：　新・Python入門編 Lesson 10 ～ 13](./paiza_python_lessons/paiza_lesson10-13.md)
   - [paiza ラーニング　：　新・Python入門編 Lesson 14 ～ 17](./paiza_python_lessons/paiza_lesson14-17.md)
   - [paiza ラーニング　：　新・Python入門編 Lesson 18 ～ 20](./paiza_python_lessons/paiza_lesson18-20.md)
-  - [paiza ラーニング　：　新・Python入門編 Lesson 21 ～ ](./paiza_python_lessons/paiza_lesson21-.md)
+  - [paiza ラーニング　：　新・Python入門編 Lesson 21 ～ 22](./paiza_python_lessons/paiza_lesson21-22.md)
+  - [paiza ラーニング　：　新・Python入門編 Lesson 23 ～ 25](./paiza_python_lessons/paiza_lesson23-25.md)
 ---
 
 - PHP - Laravel
@@ -16,3 +17,6 @@
   - [Lesson 3: Laravelのビューとフォームを理解しよう](./paiza_laravel_lessons/lesson03.md) 
   - [Lesson 4: 実用的なLaravelアプリを作ろう](./paiza_laravel_lessons/lesson04.md)
   - [Lesson 5: Laravelでユーザー管理しよう](./paiza_laravel_lessons/lesson05.md)
+
+- WEBセキュリティ（PHP+MySQL）
+  - [Webセキュリティ入門編1: ウェブサイトの攻撃手法と対策の実践](./paiza_php_securities/php_mysql_securities.md)
