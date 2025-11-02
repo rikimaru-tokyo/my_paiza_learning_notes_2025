@@ -47,7 +47,11 @@ https://paiza.jp/works/laravel/primer/beginner-laravel1/9101
 
 
 
+<br>
+
 ---
+
+<br>
 
 
 
@@ -77,7 +81,11 @@ https://paiza.jp/works/laravel/primer/beginner-laravel1/9101
 PHPフレームワークLaravelとPaizaCloudの使い方 - paiza開発日誌
   - https://paiza.hatenablog.com/entry/2018/02/16/paizacloud_laravel
 
+<br>
+
 ---
+
+<br>
 
 ## 02:アプリケーションを用意しよう
 
@@ -170,7 +178,11 @@ Laravel入門: 初心者でも10分でWebサービスを作れる！
 PHPフレームワークLaravelとPaizaCloudの使い方 - paiza開発日誌
 https://paiza.hatenablog.com/entry/2018/02/16/paizacloud_laravel
 
+<br>
+
 ---
+
+<br>
 
 ## 03:Laravel で HelloWorld
 
@@ -197,8 +209,11 @@ bbs/resources/views/welcome.blade.php
 PHPフレームワークLaravelとPaizaCloudの使い方 - paiza開発日誌
   - https://paiza.hatenablog.com/entry/2018/02/16/paizacloud_laravel
 
+<br>
 
 ---
+
+<br>
 
 ### データベース構成
 1行掲示板のデータベースには、次の情報が必要になります。
@@ -242,8 +257,11 @@ PHPフレームワークLaravelとPaizaCloudの使い方 - paiza開発日誌
   - https://paiza.hatenablog.com/entry/2018/02/16/paizacloud_laravel
 
 
+<br>
 
 ---
+
+<br>
 
 
 
@@ -293,7 +311,11 @@ PHPフレームワークLaravelとPaizaCloudの使い方 - paiza開発日誌
   - https://paiza.hatenablog.com/entry/2018/02/16/paizacloud_laravel
 
 
+<br>
+
 ---
+
+<br>
 
 ## 06:ルーティングを定義しよう
 
@@ -359,7 +381,12 @@ class AppServiceProvider extends ServiceProvider
   - https://paiza.hatenablog.com/entry/2018/02/16/paizacloud_laravel
 
 
+<br>
+
 ---
+
+<br>
+
 
 ## 07:コントローラとビューを作成しよう
 
@@ -419,7 +446,13 @@ bbs/resources/views/index.blade.php
 - Laravel入門: 初心者でも10分でWebサービスを作れる！PHPフレームワークLaravelとPaizaCloudの使い方 - paiza開発日誌
   - https://paiza.hatenablog.com/entry/2018/02/16/paizacloud_laravel
 
+
+<br>
+
 ---
+
+<br>
+
 
 ## 08:記事一覧を作成しよう
 
@@ -485,8 +518,13 @@ bbs/resources/views/index.blade.php
 - Laravel入門: 初心者でも10分でWebサービスを作れる！PHPフレームワークLaravelとPaizaCloudの使い方 - paiza開発日誌
 - https://paiza.hatenablog.com/entry/2018/02/16/paizacloud_laravel
 
+
+
+<br>
+
 ---
 
+<br>
 
 
 ## 09:詳細画面を作ろう
@@ -564,7 +602,12 @@ bbs/resources/views/index.blade.php
 
 
 
+<br>
+
 ---
+
+<br>
+
 
 【EOF】
 

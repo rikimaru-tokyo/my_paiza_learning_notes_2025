@@ -58,7 +58,15 @@ https://paiza.jp/works/laravel/primer/beginner-laravel3
   - [show.blade.phpから、編集フォームにリンクする](#showbladephpから編集フォームにリンクする)
   - [参考になるWebページ](#参考になるwebページ-9)
 
+
+<br>
+
 ---
+
+<br>
+
+
+
 
 ## 01:投稿フォームを作成しよう
 
@@ -139,7 +147,12 @@ https://paiza.jp/works/laravel/primer/beginner-laravel3
 
 
 
+<br>
+
 ---
+
+<br>
+
 
 ## 02:テンプレートを共通化しよう
 
@@ -177,7 +190,13 @@ https://qiita.com/UncleHoge/items/d48785175deced3a1b90
 - `@yield`には、外部化したいコードを書く。
 - `@yield`は親のファイルに書いて、`@section`は子のファイルに書く。
 
+
+<br>
+
 ---
+
+<br>
+
 
 ### index.blade.phpに、セクションを追加
 resources/views/index.blade.php
@@ -240,7 +259,16 @@ resources/views/show.blade.php
   - http://laraweb.net/knowledge/2174/
 
 
+<br>
+
+
+
 ---
+
+
+
+<br>
+
 
 ## 03:掲示板にBootstrapを適用しよう
 
@@ -317,9 +345,11 @@ resources/views/layout.blade.php
 - Blade テンプレートについて - Laravel学習帳
   - http://laraweb.net/knowledge/2174/
 
+<br>
 
 ---
 
+<br>
 
 
 ## 04:Bootstrapでページの見栄えを整えよう
@@ -397,9 +427,11 @@ resources/views/show.blade.php
     - http://laraweb.net/knowledge/2174/
 
 
-
+<br>
 
 ---
+
+<br>
 
 
 ## 05:検索フォームを設置しよう
@@ -488,7 +520,13 @@ $ composer info
     - https://readouble.com/laravel/5.7/ja/facades.html
 
 
+
+<br>
+
 ---
+
+<br>
+
 
 ## 06:フォームの値を取得しよう
 
@@ -532,7 +570,12 @@ public function index(Request $request)
   - ファサード 5.7 Laravel
     - https://readouble.com/laravel/5.7/ja/facades.html
 
+
+<br>
+
 ---
+
+<br>
 
 
 ## 07:掲示板のルーティングを設計しよう
@@ -584,7 +627,13 @@ public function edit(Request $request, $id, Article $article)
 - Laravelのルーティング書き方まとめ - Qiita
   - https://qiita.com/michiomochi@github/items/de19c560bc1dc19d698c
 
+
+<br>
+
 ---
+
+<br>
+
 
 ## 08:新規投稿フォームを作成しよう
 
@@ -628,7 +677,12 @@ app/Http/Controllers/ArticleController.php
 - Bladeテンプレート 5.7 Laravel
   - https://readouble.com/laravel/5.7/ja/blade.html
 
+
+<br>
+
 ---
+
+<br>
 
 
 ## 09:記事の保存機能を完成させよう
@@ -689,8 +743,12 @@ public function store(Request $request)
   - https://readouble.com/laravel/5.7/ja/blade.html
 
 
+<br>
 
 ---
+
+<br>
+
 
 ## 10:編集フォームを追加しよう - その1
 
@@ -747,7 +805,15 @@ resources/views/edit.blade.php
 - Bladeテンプレート 5.7 Laravel
   - https://readouble.com/laravel/5.7/ja/blade.html
 
+
+<br>
+
 ---
+
+<br>
+
+
+
 
 ## 11:編集フォームを追加しよう - その2
 
@@ -803,7 +869,12 @@ resources/views/show.blade.php
   - https://readouble.com/laravel/5.7/ja/blade.html
 
 
+<br>
+
 ---
+
+<br>
+
 
 【EOF】
 

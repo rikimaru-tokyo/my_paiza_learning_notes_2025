@@ -82,7 +82,11 @@ https://paiza.jp/works/laravel/primer/beginner-laravel4
 
 
 
+<br>
+
 ---
+
+<br>
 
 
 ## 01:アプリの概要を整理しよう
@@ -180,7 +184,11 @@ https://paiza.jp/works/laravel/primer/beginner-laravel4
   - https://www.webopixel.net/php/1261.html
 
 
+<br>
+
 ---
+
+<br>
 
 
 
@@ -331,7 +339,12 @@ paizaラーニングの講座でも存在しないURLへアクセスすれば表
 
 
 
+<br>
+
 ---
+
+<br>
+
 
 ## 03:モデルとコントローラを用意しよう
 
@@ -400,8 +413,12 @@ $ php artisan migrate
   - https://qiita.com/zaburo/items/d665804f8ea850502c64
 
 
+<br>
 
 ---
+
+<br>
+
 
 ## 04:お店とカテゴリのテーブルを関連付けよう
 
@@ -519,7 +536,12 @@ class AppServiceProvider extends ServiceProvider
 - Laravel5.4で基本的なリレーションを学んでみる | webOpixel
   - https://www.webopixel.net/php/1261.html
 
+
+<br>
+
 ---
+
+<br>
 
 
 ## 05:お店の一覧ページを作ろう
@@ -601,8 +623,11 @@ resources/views/index.blade.php
   - https://qiita.com/33yuki/items/7bab0d596ae9a0930f18
 
 
+<br>
 
 ---
+
+<br>
 
 
 ## 06:共通テンプレートにBootstrapを導入しよう
@@ -669,8 +694,11 @@ resources/views/layout.blade.php
 </html>
 ```
 
+<br>
 
 ---
+
+<br>
 
 
 ## 07:お店の詳細ページを作ろう
@@ -754,7 +782,15 @@ resources/views/index.blade.php
 @endsection
 ```
 
+
+<br>
+
 ---
+
+<br>
+
+
+
 
 ## 08:新規投稿フォームを作ろう
 
@@ -833,7 +869,13 @@ resources/views/new.blade.php
 @endsection
 ```
 
+
+<br>
+
 ---
+
+<br>
+
 
 
 ## 09:投稿フォームの内容を保存しよう
@@ -891,9 +933,11 @@ resources/views/index.blade.php
 @endsection
 ```
 
-
+<br>
 
 ---
+
+<br>
 
 
 ## 10:お店の編集フォームを作ろう
@@ -959,8 +1003,11 @@ resources/views/edit.blade.php
 @endsection
 ```
 
+<br>
 
 ---
+
+<br>
 
 
 ## 11:編集内容を更新しよう
@@ -1013,8 +1060,11 @@ resources/views/show.blade.php
 @endsection
 ```
 
+<br>
 
 ---
+
+<br>
 
 ## 12:お店の情報を削除しよう
 
@@ -1071,7 +1121,13 @@ resources/views/show.blade.php
     </div>
 @endsection
 ```
+
+<br>
+
 ---
+
+<br>
+
 
 ## 13:Googleマップを表示しよう
 
@@ -1125,8 +1181,11 @@ resources/views/show.blade.php
 @endsection
 ```
 
+<br>
+
 ---
 
+<br>
 
 【EOF】
 
