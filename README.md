@@ -56,3 +56,14 @@
 ---
 
 <br>
+
+
+
+# 新・Java入門編
+
+
+  - [新・Java入門編 Lesson1 ～ Lesson 7](./paiza_java_beginner/lesson01-07.md)
+  - [新・Java入門編 Lesson8 ～ Lesson 12](./paiza_java_beginner/lesson08-12.md)
+
+
+
