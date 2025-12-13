@@ -61,9 +61,9 @@
 
 # 新・Java入門編
 
-
   - [新・Java入門編 Lesson1 ～ Lesson 7](./paiza_java_beginner/lesson01-07.md)
   - [新・Java入門編 Lesson8 ～ Lesson 12](./paiza_java_beginner/lesson08-12.md)
-
-
-
+  - [新・Java入門編 Lesson13 ～ Lesson 20](./paiza_java_beginner/lesson13-20.md)
+  - [新・Java入門編 Lesson21 ～ Lesson 23](./paiza_java_beginner/lesson21-23.md)
+  - [新・Java入門編 Lesson24 ～ Lesson 25](./paiza_java_beginner/lesson24-25.md)
+  - [新・Java入門編 Lesson26 ～ Lesson 27](./paiza_java_beginner/lesson26-27.md)
