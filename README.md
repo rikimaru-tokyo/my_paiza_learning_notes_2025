@@ -67,3 +67,14 @@
   - [新・Java入門編 Lesson21 ～ Lesson 23](./paiza_java_beginner/lesson21-23.md)
   - [新・Java入門編 Lesson24 ～ Lesson 25](./paiza_java_beginner/lesson24-25.md)
   - [新・Java入門編 Lesson26 ～ Lesson 27](./paiza_java_beginner/lesson26-27.md)
+
+
+
+# 情報処理入門 テクノロジー編
+
+- [情報処理入門 テクノロジー編 Lesson01 ～ Lesson05](./paiza_infotech/lesson01-05.md)
+
+
+
+
+
