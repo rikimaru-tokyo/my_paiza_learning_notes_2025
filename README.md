@@ -35,14 +35,11 @@
 
   - [Webセキュリティ入門編1: ウェブサイトの攻撃手法と対策の実践](./paiza_php_securities/php_mysql_securities.md)
 
-
 <br>
 
 ---
 
 <br>
-
-
 
 # AWS入門編
 
@@ -50,14 +47,11 @@
   - [AWS入門編2:LAMP環境を構築しよう](./paiza_aws_beginner/lesson02.md)
   - [AWS入門編3: SQLの基本文法を学ぶ](./paiza_aws_beginner/lesson03.md)
 
-
 <br>
 
 ---
 
 <br>
-
-
 
 # 新・Java入門編
 
@@ -68,6 +62,11 @@
   - [新・Java入門編 Lesson24 ～ Lesson 25](./paiza_java_beginner/lesson24-25.md)
   - [新・Java入門編 Lesson26 ～ Lesson 27](./paiza_java_beginner/lesson26-27.md)
 
+<br>
+
+---
+
+<br>
 
 
 # 情報処理入門 テクノロジー編
