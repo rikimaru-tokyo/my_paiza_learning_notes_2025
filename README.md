@@ -72,7 +72,7 @@
 # 情報処理入門 テクノロジー編
  
 - [情報処理入門 テクノロジー編 Lesson01 ～ Lesson02](./paiza_infotech/lesson01-02.md)
-- [情報処理入門 テクノロジー編 Lesson03 ～ Lesson04](./paiza_infotech/lesson03-04.md)
+- [情報処理入門 テクノロジー編 Lesson03 ～ Lesson05](./paiza_infotech/lesson03-05.md)
 
 
 
