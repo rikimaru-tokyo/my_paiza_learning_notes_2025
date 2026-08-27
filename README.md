@@ -17,6 +17,16 @@
 
 <br>
 
+  - [バイブコーディング入門  Lesson 1](./paiza_vibe_coding/lesson01.md)
+
+
+
+<br>
+
+---
+
+<br>
+
 # PHP - Laravel
 
   - [Lesson 1: Laravelの基本を理解しよう](./paiza_laravel_lessons/lesson01.md)
